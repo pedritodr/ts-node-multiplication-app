@@ -11,6 +11,7 @@ interface OptionsRun {
 
 export class ServerApp {
   static run({ base, limit, show, name, destination }: OptionsRun) {
+    console.log("server app started");
     const table = new CreateTable().execute({ base, limit });
     const wasCreated = new SaveFile().execute({
       fileContent: table,
